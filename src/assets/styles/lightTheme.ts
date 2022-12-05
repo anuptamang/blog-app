@@ -6,7 +6,7 @@ export const lightTheme: DefaultTheme = {
   colors: {
     primary: '#5458F7',
     primaryActive: '#5458G7',
-    secondary: '#303033',
+    secondary: '#ddd',
     secondaryActive: '#303023',
     info: 'rgba(0,0,0, 0.5)',
     infoActive: 'rgba(0,0,0, 1)',
@@ -18,6 +18,7 @@ export const lightTheme: DefaultTheme = {
     textActive: '#ddd',
     body: '#fff',
     bodyActive: '#131316',
-    articleBg: '#f1f1f1'
+    articleBg: '#f1f1f1',
+    footerBg: '#ddd'
   }
 };

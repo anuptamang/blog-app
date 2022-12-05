@@ -12,7 +12,7 @@ export const S = {
     @media (max-width: 1023px) {
       background: ${(props: { theme: DefaultTheme }) => props.theme.colors.primary};
       position: fixed;
-      top: 78px;
+      top: 60px;
       left: 0;
       right: 0;
       bottom: 0;
@@ -105,7 +105,6 @@ export const S = {
       .nav-active & {
         transform: rotate(45deg);
         top: 50%;
-        background-color: ${(props: { theme: DefaultTheme }) => props.theme.colors.info};
       }
     }
 
@@ -138,7 +137,6 @@ export const S = {
 
     &.active,
     &:hover {
-      background: ${(props: { theme: DefaultTheme }) => props.theme.colors.infoActive};
       color: ${(props: { theme: DefaultTheme }) => props.theme.colors.infoActive};
 
       @media ${(props: { theme: DefaultTheme }) => props.theme.device.desktop} {

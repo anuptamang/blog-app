@@ -12,11 +12,13 @@ type Props = {
 
 const Select = ({ data, name, handleChange, value }: Props) => {
   return (
-    <S.Select value={value} name={name} onChange={handleChange}>
-      {data?.map((item) => (
-        <S.Option key={uuidv4()}>{item}</S.Option>
-      ))}
-    </S.Select>
+    <S.SelectHolder>
+      <S.Select value={value} name={name} onChange={handleChange}>
+        {data?.map((item) => (
+          <S.Option key={uuidv4()}>{item}</S.Option>
+        ))}
+      </S.Select>
+    </S.SelectHolder>
   )
 }
 

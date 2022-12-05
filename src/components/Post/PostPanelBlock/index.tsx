@@ -43,7 +43,7 @@ const PostPanelBlock = ({ values, categories, tags, handleChange }: Props) => {
           </Row>
         </Col>
         <Col md={6}>
-          <SearchForm />
+          <SearchForm handleChange={handleChange} />
         </Col>
       </Row>
     </S.PostPanel>

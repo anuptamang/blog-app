@@ -44,6 +44,7 @@ declare module 'styled-components' {
       body: string
       bodyActive: string
       articleBg: string
+      footerBg: string
     }
 
     breakpoints: string[]

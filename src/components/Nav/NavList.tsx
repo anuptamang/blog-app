@@ -18,6 +18,7 @@ const Nav = ({ navActive, setNavActive }: NavProps) => {
       <S.NavOpener onClick={() => setNavActive(!navActive)}>
         <span>Nav Opener</span>
       </S.NavOpener>
+
       <S.NavDrop>
         <S.NavList>
           {NAV.map((item, key) => (

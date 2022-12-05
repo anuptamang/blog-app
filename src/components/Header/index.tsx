@@ -8,7 +8,7 @@ const Header = () => {
   const [navActive, setNavActive] = useState(false)
 
   return (
-    <S.Header>
+    <S.Header className={navActive && 'nav-active'}>
       <Container>
         <Row alignItems='center' justifyContent='between'>
           <Col md={3}>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useTheme } from 'styled-components'
 import { FOOTER } from '../../data/static'
 import { Col, Container, Row } from '../UI/Grid'
 import { Heading } from '../UI/Heading/Heading'
@@ -6,6 +7,7 @@ import List from '../UI/List'
 import { S } from './styles'
 
 const Footer = () => {
+  const theme = useTheme()
   return (
     <S.Footer>
       <Container>
@@ -20,12 +22,12 @@ const Footer = () => {
               {FOOTER.nav.map((nav, key) => (
                 <Col key={key} md={4}>
                   <S.FooterNav>
-                    <Heading color='#fff' level='h4'>
+                    <Heading color={theme.colors.info} level='4'>
                       {nav.title}
                     </Heading>
                     <List>
-                      {nav.links.map((link) => (
-                        <li>
+                      {nav.links.map((link, key) => (
+                        <li key={key}>
                           <Link to={link.to}>{link.title}</Link>
                         </li>
                       ))}

@@ -18,6 +18,7 @@ export const darkTheme: DefaultTheme = {
     textActive: '#ddd',
     body: '#131313',
     bodyActive: '#131316',
-    articleBg: '#191A1D'
+    articleBg: '#191A1D',
+    footerBg: '#1E1E1E'
   }
 }

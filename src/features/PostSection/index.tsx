@@ -11,18 +11,22 @@ import { getHandleChange } from '../../utils/getHandleChange'
 type Props = {
   categories: string
   tags: string
+  search: string
 }
 
 const PostSection = () => {
   const [values, setValues] = useState<Props>({
     categories: '',
     tags: '',
+    search: '',
   })
 
   const handleChange = (e: eProps) => {
     getHandleChange(e, values, setValues)
     setValues({ ...values, [e.target.name]: e.target.value })
   }
+
+  console.log(values.search)
 
   return (
     <PostContainer>
