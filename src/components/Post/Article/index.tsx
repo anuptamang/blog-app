@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { useTheme } from 'styled-components'
 import { PostDataProps } from '../../../types/general'
@@ -8,7 +7,6 @@ import { Col, Row } from '../../UI/Grid'
 import { Heading } from '../../UI/Heading/Heading'
 import { Icon } from '../../UI/Icon'
 import List from '../../UI/List'
-import ListInline from '../../UI/List'
 import { Paragraph } from '../../UI/Paragraph'
 import { S } from './styles'
 
