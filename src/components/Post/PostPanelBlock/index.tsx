@@ -17,7 +17,7 @@ type Props = {
 const PostPanelBlock = ({ values, categories, tags, handleChange }: Props) => {
   return (
     <S.PostPanel>
-      <Row>
+      <Row alignItems='center'>
         <Col md={6}>
           <Row>
             <Col md={4}>
