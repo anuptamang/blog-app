@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const apiUrl = 'https://dummyjson.com'
+const API_BASE_URL = 'https://mockend.com/anuptamang/blog-app/'
 
-export const api = axios.create({
-  baseURL: apiUrl,
+const API = axios.create({
+  baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -18,3 +18,5 @@ export const api = axios.create({
     },
   ],
 });
+
+export default API

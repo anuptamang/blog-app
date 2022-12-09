@@ -1,6 +1,5 @@
 {
   "User": {
-    "userId": { "int": { "min": 0, "max": 100 } },
     "firstName": { "regexp": "[A-Z][a-z]{5,10}" },
     "LastName": { "regexp": "[A-Z][a-z]{5,10}" },
     "avatar": {
@@ -30,7 +29,7 @@
     "tag": {
       "string": ["Tech", "Health", "Finance", "Entertainment"]
     },
-    "cover": {
+    "postImageUrl": {
       "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080"
     },
     "user": {
@@ -38,15 +37,12 @@
     },
     "userId": { "int": { "min": 0, "max": 100 } },
     "views": { "int": { "min": 0, "max": 1000 } },
-    "reactions": { "int": { "min": 0, "max": 200 } },
+    "comments": { "int": { "min": 0, "max": 200 } },
     "createdAt": {
       "dateTime": {
         "min": "2010-01-01T00:00:00Z",
         "max": "2020-12-31T23:59:59Z"
       }
-    },
-    "comments": {
-      "hasMany": "Comment"
     }
   },
   "Comment": {
