@@ -26,7 +26,7 @@
         "maxLength": 300
       }
     },
-    "tag": {
+    "category": {
       "string": ["Tech", "Health", "Finance", "Entertainment"]
     },
     "postImageUrl": {
