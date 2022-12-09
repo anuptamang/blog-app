@@ -10,14 +10,14 @@ import { getHandleChange } from '../../utils/getHandleChange'
 
 type Props = {
   categories: string
-  tags: string
+  category: string
   search: string
 }
 
 const PostSection = () => {
   const [values, setValues] = useState<Props>({
     categories: '',
-    tags: '',
+    category: '',
     search: '',
   })
 

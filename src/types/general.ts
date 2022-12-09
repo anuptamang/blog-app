@@ -26,16 +26,15 @@ export interface ChildrenProps {
   children: ReactNode
 }
 
-export interface PostMetaProps {
-  views: number,
-  comments: number
-}
-
 export interface PostProps {
-  id: string,
-  title: string,
-  body: string,
-  postMeta: PostMetaProps,
+  id: string
+  title: string
+  body: string
+  createdAt: string
+  comments: number
+  category: string
+  views: number
+  userId: number
   postImageUrl: string
   limitText?: string | number
   layoutType?: string

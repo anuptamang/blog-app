@@ -26,6 +26,9 @@
         "maxLength": 300
       }
     },
+    "tag": {
+      "loremWord": {}
+    },
     "category": {
       "string": ["Tech", "Health", "Finance", "Entertainment"]
     },
