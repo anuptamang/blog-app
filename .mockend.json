@@ -35,16 +35,16 @@
     "user": {
       "belongsTo": "User"
     },
-    "author": {
+    "authorName": {
       "title": {
         "loremWords": {
           "minLength": 2,
           "maxLength": 20
         }
-      },
-      "avatar": {
-        "regexp": "https://i\\.pravatar\\.cc/150\\?u=[0-9]{5}"
       }
+    },
+    "authorAvatar": {
+      "regexp": "https://i\\.pravatar\\.cc/150\\?u=[0-9]{5}"
     },
     "views": { "int": { "min": 0, "max": 1000 } },
     "reactions": { "int": { "min": 0, "max": 200 } },
