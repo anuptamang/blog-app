@@ -26,8 +26,8 @@
         "maxLength": 300
       }
     },
-    "tag": {
-      "loremWord": {}
+    "tags": {
+      "string": ["Thor", "Loki"]
     },
     "category": {
       "string": ["Tech", "Health", "Finance", "Entertainment"]
