@@ -35,9 +35,19 @@
     "user": {
       "belongsTo": "User"
     },
-
-    "views": { "int": { "min": 0, "max": 1000000 } },
-    "reactions": { "int": { "min": 0, "max": 1000000 } },
+    "author": {
+      "title": {
+        "loremWords": {
+          "minLength": 2,
+          "maxLength": 20
+        }
+      },
+      "avatar": {
+        "regexp": "https://i\\.pravatar\\.cc/150\\?u=[0-9]{5}"
+      }
+    },
+    "views": { "int": { "min": 0, "max": 1000 } },
+    "reactions": { "int": { "min": 0, "max": 200 } },
     "createdAt": {
       "dateTime": {
         "min": "2010-01-01T00:00:00Z",
@@ -62,10 +72,10 @@
         "max": "2020-12-31T23:59:59Z"
       }
     },
-    "post": {
+    "authorPost": {
       "belongsTo": "Post"
     },
-    "user": {
+    "authorUser": {
       "belongsTo": "User"
     }
   }
