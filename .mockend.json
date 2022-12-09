@@ -5,7 +5,13 @@
     "avatar": {
       "regexp": "https://i\\.pravatar\\.cc/150\\?u=[0-9]{5}"
     },
-    "email": { "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}" }
+    "email": { "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}" },
+    "comments": {
+      "hasMany": "Comment"
+    },
+    "post": {
+      "hasMany": "Post"
+    }
   },
   "Post": {
     "title": {
@@ -16,8 +22,8 @@
     },
     "body": {
       "loremParagraphs": {
-        "minLength": 10,
-        "maxLength": 100
+        "minLength": 20,
+        "maxLength": 300
       }
     },
     "tag": {
@@ -26,8 +32,14 @@
     "cover": {
       "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080"
     },
+    "user": {
+      "belongsTo": "User"
+    },
 
-    "views": {},
+    "meta": {
+      "views": { "int": { "min": 0, "max": 1000000 } },
+      "comments": { "int": { "min": 0, "max": 1000000 } }
+    },
     "createdAt": {
       "dateTime": {
         "min": "2010-01-01T00:00:00Z",
@@ -39,7 +51,12 @@
     }
   },
   "Comment": {
-    "body": { "string": {} },
+    "body": {
+      "loremParagraphs": {
+        "minLength": 20,
+        "maxLength": 300
+      }
+    },
 
     "createdAt": {
       "dateTime": {
@@ -49,6 +66,9 @@
     },
     "post": {
       "belongsTo": "Post"
+    },
+    "user": {
+      "belongsTo": "User"
     }
   }
 }
