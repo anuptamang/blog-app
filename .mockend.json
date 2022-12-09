@@ -1,13 +1,21 @@
 {
   "Post": {
-    "title": { "string": {} },
-    "text": {
-      "loremParagraphs": { "minLength": 200, "maxLength": 500 },
-      "longDescription": {
-        "loremSentences": { "minLength": 100, "maxLength": 200 }
+    "title": {
+      "loremWords": {
+        "minLength": 5,
+        "maxLength": 20
       }
     },
-    "photo": {
+    "body": {
+      "loremParagraphs": {
+        "minLength": 10,
+        "maxLength": 100
+      }
+    },
+    "tag": {
+      "string": ["Tech", "Health", "Finance", "Entertainment"]
+    },
+    "cover": {
       "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080"
     },
 
@@ -18,6 +26,12 @@
         "regexp": "https://i\\.pravatar\\.cc/150\\?u=[0-9]{5}"
       },
       "email": { "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}" }
+    },
+    "createdAt": {
+      "dateTime": {
+        "min": "2010-01-01T00:00:00Z",
+        "max": "2020-12-31T23:59:59Z"
+      }
     },
     "comments": {
       "hasMany": "Comment"
@@ -32,6 +46,12 @@
         "regexp": "https://i\\.pravatar\\.cc/150\\?u=[0-9]{5}"
       },
       "email": { "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}" }
+    },
+    "createdAt": {
+      "dateTime": {
+        "min": "2010-01-01T00:00:00Z",
+        "max": "2020-12-31T23:59:59Z"
+      }
     },
     "post": {
       "belongsTo": "Post"
