@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { S } from './styles'
 
@@ -5,7 +6,7 @@ type Props = {
   data: string[]
   defaultValue?: string
   initialValue?: string
-  handleChange: (e: any) => void
+  handleChange: (e: ChangeEvent<HTMLSelectElement>) => string | number | boolean
   name: string
   value: string
 }

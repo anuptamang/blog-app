@@ -1,7 +1,7 @@
 import styled, { DefaultTheme } from 'styled-components'
 
 type HeaderProps = {
-  className?: any
+  className?: string
 }
 
 export const S = {

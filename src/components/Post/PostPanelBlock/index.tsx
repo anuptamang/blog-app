@@ -1,4 +1,5 @@
 import { ChangeEvent } from 'react'
+import { HandleChangeProps } from '../../../types/general'
 import SearchForm from '../../SearchForm'
 import Select from '../../UI/Form/Select'
 import { Col, Row } from '../../UI/Grid'
@@ -11,7 +12,7 @@ type Props = {
     categories: string
     tags: string
   }
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void
+  handleChange: HandleChangeProps
 }
 
 const PostPanelBlock = ({ values, categories, tags, handleChange }: Props) => {
@@ -23,7 +24,7 @@ const PostPanelBlock = ({ values, categories, tags, handleChange }: Props) => {
             <Col md={4}>
               <Select
                 name='categories'
-                handleChange={(e: ChangeEvent<HTMLInputElement>) =>
+                handleChange={(e: ChangeEvent<HTMLSelectElement>) =>
                   handleChange(e)
                 }
                 data={categories}
@@ -33,7 +34,7 @@ const PostPanelBlock = ({ values, categories, tags, handleChange }: Props) => {
             <Col md={4}>
               <Select
                 name='tags'
-                handleChange={(e: ChangeEvent<HTMLInputElement>) =>
+                handleChange={(e: ChangeEvent<HTMLSelectElement>) =>
                   handleChange(e)
                 }
                 data={tags}

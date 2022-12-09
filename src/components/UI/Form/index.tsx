@@ -4,7 +4,7 @@ import { S } from './styles'
 export interface FormProps {
   children: ReactNode
   handleSubmit?: () => void
-  values: any
+  values: { [key: string]: [val: string | string[]] }
   setValues: () => void
 }
 

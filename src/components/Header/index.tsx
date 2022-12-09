@@ -6,9 +6,10 @@ import { S } from './styles'
 
 const Header = () => {
   const [navActive, setNavActive] = useState(false)
+  let className = navActive ? 'nav-active' : ''
 
   return (
-    <S.Header className={navActive && 'nav-active'}>
+    <S.Header className={className}>
       <Container>
         <Row alignItems='center' justifyContent='between'>
           <Col md={3}>

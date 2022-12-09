@@ -2,7 +2,11 @@ import styled from 'styled-components'
 import { color, compose, space, typography, variant } from 'styled-system'
 import { styles } from './styles'
 
-const Button = styled('button').attrs(({ variant }: any) => ({
+type ButtonProps = {
+  variant: 'primary' | 'secondary' | 'success' | 'danger'
+}
+
+const Button = styled('button').attrs(({ variant }: ButtonProps) => ({
   variant: variant,
 }))(
   { ...styles.global },

@@ -29,7 +29,7 @@ const Article = ({
               <Heading color={theme.colors.text} level='2'>
                 {title}
               </Heading>
-              <Paragraph>{getExcerpt(body, limitText)}</Paragraph>
+              <Paragraph>{getExcerpt(body, limitText as number)}</Paragraph>
               <S.PostPanel>
                 <Row alignItems='center'>
                   <Col md={5}>
@@ -65,7 +65,7 @@ const Article = ({
             <Heading color={theme.colors.text} level='2'>
               {title}
             </Heading>
-            <Paragraph>{getExcerpt(body, limitText)}</Paragraph>
+            <Paragraph>{getExcerpt(body, limitText as number)}</Paragraph>
             <S.PostPanel>
               <Row alignItems='center'>
                 <Col md={5}>

@@ -5,7 +5,7 @@ import PostsBlock from '../../components/Post/PostsBlock'
 
 import PostContainer from '../../components/UI/PostContainer'
 import { CATEGORIES, POSTS, TAGS } from '../../data/static'
-import { eProps } from '../../types/general'
+import { HandleChangeProps } from '../../types/general'
 import { getHandleChange } from '../../utils/getHandleChange'
 
 type Props = {
@@ -21,12 +21,10 @@ const PostSection = () => {
     search: '',
   })
 
-  const handleChange = (e: eProps) => {
+  const handleChange = (e: HandleChangeProps) => {
     getHandleChange(e, values, setValues)
     setValues({ ...values, [e.target.name]: e.target.value })
   }
-
-  console.log(values.search)
 
   return (
     <PostContainer>

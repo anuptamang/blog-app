@@ -1,10 +1,10 @@
 
 type StylesProps = {
-  global: any,
-  primary: any
-  secondary?: any
-  danger?: any
-  success?: any
+  global: {},
+  primary: {},
+  secondary?: {},
+  danger?: {},
+  success?: {},
 }
 
 export const styles: StylesProps = {
@@ -36,7 +36,6 @@ export const styles: StylesProps = {
   },
 
   primary: {
-
     color: '#fff',
     bg: '#5458F7',
     '&:hover': {

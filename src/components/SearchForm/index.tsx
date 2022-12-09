@@ -1,11 +1,7 @@
-import { eProps } from '../../types/general'
+import { HandleChangeProps } from '../../types/general'
 import { S } from './styles'
 
-type Props = {
-  handleChange: (e: eProps) => void
-}
-
-const SearchForm = ({ handleChange }: Props) => {
+const SearchForm = ({ handleChange }: HandleChangeProps) => {
   return (
     <S.Form>
       <S.IconHolder

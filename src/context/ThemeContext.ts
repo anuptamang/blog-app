@@ -1,3 +1,11 @@
 import { createContext } from 'react';
 
-export const ThemeContext = createContext<any>(null)
+interface ThemeProps {
+  theme: string | null
+  themeToggler: () => void
+}
+
+export const ThemeContext = createContext<ThemeProps>({
+  theme: null,
+  themeToggler: () => { }
+})
