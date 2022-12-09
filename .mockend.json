@@ -27,9 +27,7 @@
       "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080"
     },
 
-    "author": {
-      "hasOne": "Author"
-    },
+    "views": "number",
     "createdAt": {
       "dateTime": {
         "min": "2010-01-01T00:00:00Z",
@@ -42,9 +40,7 @@
   },
   "Comment": {
     "body": { "string": {} },
-    "author": {
-      "hasOne": "Author"
-    },
+
     "createdAt": {
       "dateTime": {
         "min": "2010-01-01T00:00:00Z",
