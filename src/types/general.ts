@@ -27,15 +27,16 @@ export interface ChildrenProps {
 }
 
 export interface PostProps {
-  id: string
+  id: string | number
   title: string
   body: string
-  createdAt: string
-  comments: number
-  category: string
-  views: number
-  userId: number
-  postImageUrl: string
+  createdAt?: string
+  reactions: number
+  categories?: string
+  tags: string[]
+  views?: number
+  userId?: string | number
+  postImageUrl?: string
   limitText?: string | number
   layoutType?: string
 }
@@ -46,6 +47,7 @@ export interface PostDataProps {
 
 export interface PostsProps {
   posts: {
+    posts: any
     data: PostProps[],
     limit: number,
     total: number
@@ -54,3 +56,17 @@ export interface PostsProps {
 
 export type eProps = ChangeEvent<HTMLInputElement>
 export type HandleChangeProps = any
+
+export type SetDataProps = (prev: [] | {} | string | number) => void
+export type SetLoadingProps = (p: boolean | number) => void
+
+export type ActionMap<M extends { [index: string]: any }> = {
+  [Key in keyof M]: M[Key] extends undefined
+  ? {
+    type: Key;
+  }
+  : {
+    type: Key;
+    payload: M[Key];
+  }
+};

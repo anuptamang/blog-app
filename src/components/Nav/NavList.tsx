@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { ThemeContext } from '../../context/ThemeContext'
+import { ThemeContext } from '../../context/theme/ThemeContext'
 import { NAV } from '../../data/static'
 import { Icon } from '../UI/Icon'
 import { NavItem } from './NavItem'

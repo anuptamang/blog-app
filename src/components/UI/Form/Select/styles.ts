@@ -13,6 +13,7 @@ export const S = {
      padding: 0 20px;
      border: 0;
      margin: 0;
+     text-transform: capitalize;
      -webkit-appearance: none;
 
      &:-ms-expand {
@@ -39,6 +40,6 @@ export const S = {
     }
   `,
   Option: styled.option`
-    /* text-transform: uppercase; */
+    text-transform: capitalize;
   `,
 }

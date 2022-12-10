@@ -1,2 +1,2 @@
-export const CATEGORIES = ['Categories', 'Lorem', 'Ipsum', 'Dolor', 'Amet']
-export const TAGS = ['Tags', 'Tempor', 'Amet', 'Nulla', 'Netus']
+export const CATEGORIES = ['categories', 'history', 'crime', 'mystery', 'magical']
+export const TAGS = ['tags', 'secrets', 'love', 'mind', 'live', 'fiction']

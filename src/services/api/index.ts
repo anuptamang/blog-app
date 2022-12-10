@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://mockend.com/anuptamang/blog-app/'
+export const API_URL = process.env.REACT_APP_BACKEND_API_URL
 
 const API = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
   },

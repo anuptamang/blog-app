@@ -9,6 +9,8 @@ import postImage7 from '../../assets/images/img7.jpg';
 import postImage8 from '../../assets/images/img8.jpg';
 import postImage9 from '../../assets/images/img9.jpg';
 
+export const dummyImage = 'https://picsum.photos/1400/700'
+
 export {
   postImage1,
   postImage10,

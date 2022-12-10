@@ -1,23 +1,28 @@
-import { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import PostFeaturedBlock from '../../components/Post/PostFeaturedBlock'
 import PostPanelBlock from '../../components/Post/PostPanelBlock'
 import PostsBlock from '../../components/Post/PostsBlock'
-
+import Loading from '../../components/UI/Loading'
 import PostContainer from '../../components/UI/PostContainer'
-import { CATEGORIES, POSTS, TAGS } from '../../data/static'
+import { PostContext } from '../../context/app/post'
+import { getAllPost } from '../../context/app/post/action'
+import { CATEGORIES, TAGS } from '../../data/static'
 import { HandleChangeProps } from '../../types/general'
 import { getHandleChange } from '../../utils/getHandleChange'
 
 type Props = {
   categories: string
-  category: string
+  tags: string
   search: string
 }
 
 const PostSection = () => {
+  const { state, dispatch } = useContext(PostContext)
+  const { loading, data } = state
+
   const [values, setValues] = useState<Props>({
     categories: '',
-    category: '',
+    tags: '',
     search: '',
   })
 
@@ -25,6 +30,10 @@ const PostSection = () => {
     getHandleChange(e, values, setValues)
     setValues({ ...values, [e.target.name]: e.target.value })
   }
+
+  useEffect(() => {
+    getAllPost(dispatch)
+  }, [dispatch])
 
   return (
     <PostContainer>
@@ -34,8 +43,14 @@ const PostSection = () => {
         tags={TAGS}
         values={values}
       />
-      <PostFeaturedBlock data={POSTS.data[0]} />
-      <PostsBlock posts={POSTS} />
+      {loading || !data?.posts?.length ? (
+        <Loading />
+      ) : (
+        <>
+          <PostFeaturedBlock data={data.posts[0]} />
+          <PostsBlock posts={data} />
+        </>
+      )}
     </PostContainer>
   )
 }

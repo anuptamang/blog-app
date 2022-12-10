@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTheme } from 'styled-components'
+import { dummyImage } from '../../../data/static'
 import { PostDataProps } from '../../../types/general'
 import { getExcerpt } from '../../../utils/getExcerpt'
 import { Button } from '../../UI/Button'
@@ -11,7 +12,16 @@ import { Paragraph } from '../../UI/Paragraph'
 import { S } from './styles'
 
 const Article = ({
-  data: { id, title, body, postImageUrl, postMeta, limitText, layoutType },
+  data: {
+    id,
+    title,
+    body,
+    postImageUrl,
+    views,
+    reactions,
+    limitText,
+    layoutType,
+  },
 }: PostDataProps) => {
   const theme = useTheme()
 
@@ -21,7 +31,7 @@ const Article = ({
         <S.Row alignItems='center'>
           <Col md={6}>
             <S.Img>
-              <img src={postImageUrl} alt={title} />
+              <img src={dummyImage} alt={title} />
             </S.Img>
           </Col>
           <Col md={6}>
@@ -43,11 +53,11 @@ const Article = ({
                   <Col md={7}>
                     <List type='inline' justifyContent='end'>
                       <li>
-                        <Icon size={16} icon='eye' /> {postMeta.views}
+                        <Icon size={16} icon='eye' /> {views}
                       </li>
                       <li>
                         <Icon size={16} icon='chat_bubble_outline' />{' '}
-                        {postMeta.comments}
+                        {reactions}
                       </li>
                     </List>
                   </Col>
@@ -59,7 +69,7 @@ const Article = ({
       ) : (
         <>
           <S.Img>
-            <img src={postImageUrl} alt={title} />
+            <img src={dummyImage} alt={title} />
           </S.Img>
           <S.TextHolder>
             <Heading color={theme.colors.text} level='2'>
@@ -79,11 +89,10 @@ const Article = ({
                 <Col md={7}>
                   <List type='inline' justifyContent='end'>
                     <li>
-                      <Icon size={16} icon='eye' /> {postMeta.views}
+                      <Icon size={16} icon='eye' /> {views}
                     </li>
                     <li>
-                      <Icon size={16} icon='chat_bubble_outline' />{' '}
-                      {postMeta.comments}
+                      <Icon size={16} icon='chat_bubble_outline' /> {reactions}
                     </li>
                   </List>
                 </Col>
