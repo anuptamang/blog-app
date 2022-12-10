@@ -1,0 +1,73 @@
+{
+  "User": {
+    "firstName": { "regexp": "[A-Z][a-z]{5,10}" },
+    "LastName": { "regexp": "[A-Z][a-z]{5,10}" },
+    "avatar": {
+      "regexp": "https://i\\.pravatar\\.cc/150\\?u=[0-9]{5}"
+    },
+    "email": { "regexp": "[a-z]{5,10}@[a-z]{5}\\.[a-z]{2,3}" },
+    "comments": {
+      "hasMany": "Comment"
+    },
+    "post": {
+      "hasMany": "Post"
+    }
+  },
+  "Post": {
+    "title": {
+      "loremWords": {
+        "minLength": 5,
+        "maxLength": 20
+      }
+    },
+    "body": {
+      "loremParagraphs": {
+        "minLength": 20,
+        "maxLength": 300
+      }
+    },
+    "tags": {
+      "string": ["Thor", "Loki"]
+    },
+    "category": {
+      "string": ["Tech", "Health", "Finance", "Entertainment"]
+    },
+    "postImageUrl": {
+      "regexp": "https://picsum\\.photos/seed/[0-9]{5}/1920/1080"
+    },
+    "user": {
+      "belongsTo": "User"
+    },
+    "userId": { "int": { "min": 0, "max": 100 } },
+    "views": { "int": { "min": 0, "max": 1000 } },
+    "comments": { "int": { "min": 0, "max": 200 } },
+    "createdAt": {
+      "dateTime": {
+        "min": "2010-01-01T00:00:00Z",
+        "max": "2020-12-31T23:59:59Z"
+      }
+    }
+  },
+  "Comment": {
+    "body": {
+      "loremParagraphs": {
+        "minLength": 20,
+        "maxLength": 300
+      }
+    },
+    "userId": { "int": { "min": 0, "max": 100 } },
+
+    "createdAt": {
+      "dateTime": {
+        "min": "2010-01-01T00:00:00Z",
+        "max": "2020-12-31T23:59:59Z"
+      }
+    },
+    "authorPost": {
+      "belongsTo": "Post"
+    },
+    "authorUser": {
+      "belongsTo": "User"
+    }
+  }
+}
