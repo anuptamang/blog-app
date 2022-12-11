@@ -1,4 +1,4 @@
-# Live Preview: https://akt-blog-app.netlify.app/
+# Live Preview: https://blog-app-black-beta.vercel.app/
 
 ## Tools
 
