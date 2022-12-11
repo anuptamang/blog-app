@@ -15,6 +15,7 @@ export const S = {
             display: flex;
             flex-wrap: wrap;
             margin: 0 -5px;
+            gap: 10px;
         `;
         default:
           return css``;

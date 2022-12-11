@@ -53,7 +53,7 @@ const Article = ({
                   <Col md={7}>
                     <List type='inline' justifyContent='end'>
                       <li>
-                        <Icon size={16} icon='eye' /> {views}
+                        <Icon size={16} icon='eye' /> {views ? views : '4'}
                       </li>
                       <li>
                         <Icon size={16} icon='chat_bubble_outline' />{' '}
@@ -89,7 +89,7 @@ const Article = ({
                 <Col md={7}>
                   <List type='inline' justifyContent='end'>
                     <li>
-                      <Icon size={16} icon='eye' /> {views}
+                      <Icon size={16} icon='eye' /> {views ? views : '4'}
                     </li>
                     <li>
                       <Icon size={16} icon='chat_bubble_outline' /> {reactions}

@@ -8,6 +8,7 @@ import postImage6 from '../../assets/images/img6.jpg';
 import postImage7 from '../../assets/images/img7.jpg';
 import postImage8 from '../../assets/images/img8.jpg';
 import postImage9 from '../../assets/images/img9.jpg';
+import img404 from '../../assets/images/404.jpg';
 
 export const dummyImage = 'https://picsum.photos/1400/700'
 
@@ -21,5 +22,6 @@ export {
   postImage6,
   postImage7,
   postImage8,
-  postImage9
+  postImage9,
+  img404
 }

@@ -3,7 +3,7 @@ import Article from '../Article'
 import { S } from './styles'
 
 const PostFeaturedBlock = ({ data }: PostDataProps) => {
-  const limitText = 50
+  const limitText = 200
   const layoutType = 'HORIZONTAL'
 
   return (

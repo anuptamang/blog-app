@@ -3,7 +3,7 @@ import { S } from './styles'
 
 const SearchForm = ({ handleChange }: HandleChangeProps) => {
   return (
-    <S.Form>
+    <S.Form onSubmit={(e) => e.preventDefault()}>
       <S.IconHolder
         icon='search, magnifier, magnifying-glass, inspect, find'
         size={20}

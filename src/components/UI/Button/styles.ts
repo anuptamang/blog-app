@@ -16,7 +16,6 @@ export const styles: StylesProps = {
     border: 0,
     margin: 0,
     background: 'none',
-    textTransform: 'uppercase',
     fontWeight: 700,
     paddingTop: '10px',
     paddingBottom: '10px',
@@ -28,18 +27,23 @@ export const styles: StylesProps = {
     position: 'relative',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
+    gap: '10px',
 
     '&:disabled': {
       pointerEvents: 'none',
       // opacity: 0.5,
     },
+
+
   },
+
+
 
   primary: {
     color: '#fff',
     bg: '#5458F7',
     '&:hover': {
-      backgroundColor: '#5458F8',
+      backgroundColor: '#4347d4',
     },
     '&.active': {
       backgroundColor: '#5458F8',

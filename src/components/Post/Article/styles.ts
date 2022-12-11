@@ -18,6 +18,10 @@ export const S = {
   ArticleHolder: styled.div``,
   TextHolder: styled.div`
     padding: 20px;
+
+    @media ${(props: { theme: DefaultTheme }) => props.theme.device.desktop} {
+       padding: 40px 50px;
+    }
   `,
   Img: styled.div`
 

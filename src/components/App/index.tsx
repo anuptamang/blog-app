@@ -2,6 +2,7 @@ import { ThemeProvider } from 'styled-components'
 import { Normalize } from 'styled-normalize'
 import { darkTheme, GlobalStyle, lightTheme } from '../../assets/styles'
 import { PostProvider } from '../../context/app/post'
+import { UserProvider } from '../../context/app/user'
 import { ThemeContext } from '../../context/theme/ThemeContext'
 import { useThemeMode } from '../../hooks/useThemeMode'
 import AppRouter from '../../routes/AppRouter'
@@ -14,9 +15,11 @@ function App() {
       <Normalize />
       <GlobalStyle />
       <ThemeContext.Provider value={{ theme, themeToggler }}>
-        <PostProvider>
-          <AppRouter />
-        </PostProvider>
+        <UserProvider>
+          <PostProvider>
+            <AppRouter />
+          </PostProvider>
+        </UserProvider>
       </ThemeContext.Provider>
     </ThemeProvider>
   )

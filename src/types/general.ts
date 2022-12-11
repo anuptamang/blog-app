@@ -26,6 +26,29 @@ export interface ChildrenProps {
   children: ReactNode
 }
 
+export interface Author {
+  id?: number;
+  firstName: string;
+  lastName: string;
+  maidenName: string;
+  age: number | null;
+  gender: string;
+  email: string;
+  phone: string;
+  username: string;
+  birthDate: string;
+  image: string;
+  company: {
+    department: string
+    name: string
+    title: string
+  }
+}
+
+export interface AuthorDataProps {
+  data: Author
+}
+
 export interface PostProps {
   id: string | number
   title: string
@@ -42,12 +65,31 @@ export interface PostProps {
 }
 
 export interface PostDataProps {
-  data: PostProps
+  data: PostProps,
+  author?: AuthorDataProps
+  comments?: CommentsDataProps
+}
+
+export interface CommentsProps {
+  id?: string | number
+  body: string
+  postId: string | number
+  user: {
+    id: string | number
+    username: string
+  }
+}
+
+export interface CommentsDataProps {
+  comments: CommentsProps[]
+  total?: number
+  skip?: number
+  limit?: number
 }
 
 export interface PostsProps {
   posts: {
-    posts: any
+    posts: []
     data: PostProps[],
     limit: number,
     total: number
@@ -59,6 +101,11 @@ export type HandleChangeProps = any
 
 export type SetDataProps = (prev: [] | {} | string | number) => void
 export type SetLoadingProps = (p: boolean | number) => void
+
+export interface IDispatch {
+  type: string
+  payload?: string[] | [] | {}[] | boolean | number | unknown
+}
 
 export type ActionMap<M extends { [index: string]: any }> = {
   [Key in keyof M]: M[Key] extends undefined
