@@ -5,4 +5,5 @@
 - React
 - TypeScript
 - react-router-dom
+- React Context and useReducer
 - styled-components
