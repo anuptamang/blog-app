@@ -1,4 +1,4 @@
-# Live Preview: https://blog-app-black-beta.vercel.app/
+# Live Preview: https://blog-app-anuptamang.vercel.app/
 
 ## Tools
 
