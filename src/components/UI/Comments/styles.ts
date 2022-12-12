@@ -5,6 +5,7 @@ export const S = {
    background: ${(props: { theme: DefaultTheme }) => props.theme.colors.body};
    color: ${(props: { theme: DefaultTheme }) => props.theme.colors.text};
    padding-left: 50px;
+   margin-bottom: 50px;
 
    @media ${(props: { theme: DefaultTheme }) => props.theme.device.tablet} {
       //
@@ -37,7 +38,7 @@ export const S = {
     background: ${(props: { theme: DefaultTheme }) => props.theme.colors.boxBg};
     padding: 30px;
     border-radius: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   `,
   Text: styled.div``,
   CommentPane: styled.div`
@@ -54,5 +55,8 @@ export const S = {
     &:hover {
       opacity: 0.7;
     }
+  `,
+  CommentBox: styled.div`
+    padding-left: 50px;
   `,
 }

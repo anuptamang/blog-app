@@ -53,15 +53,27 @@ export const S = {
       gap: 15px;
      }
   `,
-  Icon: styled.div`
+  Icon: styled.div<any>`
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 100%;
-    background: ${(props: { theme: DefaultTheme }) => props.theme.colors.primary};
-    color: #fff;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    transition: all 0.3s linear;
+    color: ${(props: { theme: DefaultTheme }) => props.theme.colors.text};
+    background: ${(props: { theme: DefaultTheme }) => props.theme.colors.boxBg};
+
+    &.liked {
+      background: ${(props: { theme: DefaultTheme }) => props.theme.colors.primary};
+    }
+
+    &:hover {
+      top: -3px;
+    }
 
     @media ${(props: { theme: DefaultTheme }) => props.theme.device.tablet} {
       //

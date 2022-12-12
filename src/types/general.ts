@@ -64,10 +64,17 @@ export interface PostProps {
   layoutType?: string
 }
 
+export interface LikesProps {
+  likes: number | undefined
+  setLikes: (likes: number | undefined) => void
+}
+
 export interface PostDataProps {
   data: PostProps,
   author?: AuthorDataProps
   comments?: CommentsDataProps
+  likes?: any
+  setLikes?: any
 }
 
 export interface CommentsProps {
@@ -86,6 +93,8 @@ export interface CommentsDataProps {
   skip?: number
   limit?: number
 }
+
+
 
 export interface PostsProps {
   posts: {

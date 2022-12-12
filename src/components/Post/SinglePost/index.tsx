@@ -1,14 +1,41 @@
+import { useRef, useState } from 'react'
 import { useTheme } from 'styled-components'
 import { PostDataProps } from '../../../types'
 import Comments from '../../UI/Comments'
+import CommentBox from '../../UI/Comments/CommentBox'
 import { Container } from '../../UI/Grid'
 import { Heading } from '../../UI/Heading/Heading'
 import { Icon } from '../../UI/Icon'
 import Banner from './Banner'
 import { S } from './styles'
 
-const SinglePost = ({ data, author, comments }: PostDataProps) => {
+const SinglePost = ({
+  data,
+  author,
+  comments,
+  likes,
+  setLikes,
+}: PostDataProps) => {
   const theme = useTheme()
+  const likesRef = useRef<any>(null)
+  const [count, setCount] = useState(0)
+  const [showComments, setShowComments] = useState(false)
+
+  const handleLikes = () => {
+    if (count < 1) {
+      setLikes((prev: number) => prev + 1)
+      setCount(count + 1)
+      likesRef?.current.classList.add('liked')
+    } else {
+      setLikes((prev: number) => prev - 1)
+      setCount(count - 1)
+      likesRef?.current.classList.remove('liked')
+    }
+  }
+
+  const handleComments = () => {
+    setShowComments((prev) => !prev)
+  }
 
   return (
     <S.SinglePage>
@@ -33,20 +60,21 @@ const SinglePost = ({ data, author, comments }: PostDataProps) => {
           <S.ReactionPanel>
             <S.List type='inline'>
               <li>
-                <S.Icon>
+                <S.Icon primary onClick={handleLikes} ref={likesRef}>
                   <Icon icon='thumbs-up' size={24} />
                 </S.Icon>
-                {data?.reactions}
+                {likes && likes}
               </li>
               <li>
-                <S.Icon>
+                <S.Icon onClick={handleComments}>
                   <Icon icon='chat, comment, bubble, talk' size={18} />
                 </S.Icon>
                 {comments?.total}
               </li>
             </S.List>
           </S.ReactionPanel>
-          <Comments data={comments} />
+          {showComments && <Comments data={comments} />}
+          <CommentBox />
         </Container>
       </S.PostHolder>
     </S.SinglePage>
