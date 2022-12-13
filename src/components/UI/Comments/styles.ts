@@ -1,4 +1,5 @@
 import styled, { DefaultTheme } from 'styled-components'
+import List from '../List'
 
 export const S = {
   Comments: styled.div`
@@ -56,7 +57,40 @@ export const S = {
       opacity: 0.7;
     }
   `,
-  CommentBox: styled.div`
-    padding-left: 50px;
+  CommentBox: styled.form`
+    padding-left: 0;
+    max-width: 630px;
+  `,
+
+  Link: styled.span`
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  `,
+
+  List: styled(List)`
+    margin-bottom: 20px;
+  `,
+
+  Textarea: styled.textarea`
+    padding: 20px;
+    background: ${(props: { theme: DefaultTheme }) => props.theme.colors.boxBg};
+    color: ${(props: { theme: DefaultTheme }) => props.theme.colors.text};
+    border: 0;
+    border-radius: 20px;
+    height: 80px;
+    resize: none;
+    width: 100%;
+    outline: none;
+    box-shadow: none;
+    margin-bottom: 20px;
+  `,
+
+  BtnHolder: styled.div`
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
   `,
 }

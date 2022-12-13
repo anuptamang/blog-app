@@ -13,6 +13,22 @@ const PostDetail = () => {
   const { state: post, dispatch: postDispatch } = useContext(PostContext)
   const { state: author, dispatch: userDispatch } = useContext(UserContext)
   const [likes, setLikes] = useState<LikesProps>()
+  const [postComments, setPostComments] = useState<any>({
+    comments: [],
+    total: 0,
+  })
+
+  const auth = true
+
+  const handleCommentSubmit = (id: string | number, comment: any) => {
+    // e.preventDefault()
+    console.log(id, comment, '- commentOnPost')
+  }
+
+  const handleReplySubmit = (id: string | number, comment: any) => {
+    // e.preventDefault()
+    console.log(id, comment, '- replyOnComment')
+  }
 
   useEffect(() => {
     getPostsById(postDispatch, id)
@@ -21,6 +37,15 @@ const PostDetail = () => {
   useEffect(() => {
     if (post?.data?.reactions) setLikes(post.data.reactions)
   }, [post.data.reactions])
+
+  useEffect(() => {
+    if (post?.postComments)
+      setPostComments({
+        ...postComments,
+        comments: post?.postComments.comments,
+        total: post?.postComments.total,
+      })
+  }, [post?.postComments])
 
   useEffect(() => {
     post?.data?.userId && getUserById(userDispatch, post?.data?.userId)
@@ -40,7 +65,11 @@ const PostDetail = () => {
           author={author}
           likes={likes}
           setLikes={setLikes}
-          comments={post.postComments}
+          comments={postComments}
+          setPostComments={setPostComments}
+          handleCommentSubmit={handleCommentSubmit}
+          handleReplySubmit={handleReplySubmit}
+          auth={auth}
         />
       )}
     </>

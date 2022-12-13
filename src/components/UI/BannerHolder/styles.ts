@@ -6,7 +6,7 @@ export const S = {
    position: relative;
    height: 350px;
    background: ${(props: { theme: DefaultTheme }) => props.theme.colors.body};
-   color: ${(props: { theme: DefaultTheme }) => props.theme.colors.text};
+   color: #fff;
    z-index: 1;
    display: flex;
    align-items: center;

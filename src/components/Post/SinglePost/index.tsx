@@ -15,11 +15,15 @@ const SinglePost = ({
   comments,
   likes,
   setLikes,
+  handleCommentSubmit,
+  handleReplySubmit,
+  auth,
+  setPostComments,
 }: PostDataProps) => {
   const theme = useTheme()
   const likesRef = useRef<any>(null)
   const [count, setCount] = useState(0)
-  const [showComments, setShowComments] = useState(false)
+  const [showComments, setShowComments] = useState(true)
 
   const handleLikes = () => {
     if (count < 1) {
@@ -36,6 +40,8 @@ const SinglePost = ({
   const handleComments = () => {
     setShowComments((prev) => !prev)
   }
+
+  // console.log(data.id);
 
   return (
     <S.SinglePage>
@@ -73,8 +79,15 @@ const SinglePost = ({
               </li>
             </S.List>
           </S.ReactionPanel>
-          {showComments && <Comments data={comments} />}
-          <CommentBox />
+          {showComments && (
+            <Comments handleSubmit={handleReplySubmit} data={comments} />
+          )}
+          <CommentBox
+            handleSubmit={handleCommentSubmit}
+            id={data.id}
+            auth={auth}
+            setPostComments={setPostComments}
+          />
         </Container>
       </S.PostHolder>
     </S.SinglePage>

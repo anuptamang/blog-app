@@ -75,6 +75,12 @@ export interface PostDataProps {
   comments?: CommentsDataProps
   likes?: any
   setLikes?: any
+  auth?: any
+  handleCommentSubmit?: any
+  handleReplySubmit?: any
+  setPostComments?: any
+  setReplyComments?: any
+  replyComments?: any
 }
 
 export interface CommentsProps {
